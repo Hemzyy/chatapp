@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Login and Registration Form</title>
-  <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
   <h1>Login and Registration Form</h1>
@@ -44,6 +44,6 @@
     </form>
   </div>
 
-  <script src="../js/register.js"></script>
+  <script src="js/register.js"></script>
 </body>
 </html>
