@@ -1,3 +1,9 @@
+<?php include "php/registerScript.php";
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL|E_STRICT);
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -22,19 +28,19 @@
       <button id="submit-button" type="submit">Log In</button>
     </form>
 
-    <form method="post" id="registrationForm">
+    <form action="php/registerScript.php" method="post" id="registrationForm" >
       <h2>Registration</h2>
       <div>
         <label for="regUsername">Username</label>
-        <input class="login-input" type="text" id="regUsername" required>
+        <input class="login-input" type="text" name="newUserName" id="regUsername" required>
       </div>
       <div>
         <label for="regEmail">Email</label>
-        <input class="login-input" type="email" id="regEmail" required>
+        <input class="login-input" type="email" name="newUserEmail" id="regEmail" required>
       </div>
       <div>
         <label for="regPassword">Password</label>
-        <input class="login-input" type="password" id="regPassword" required>
+        <input class="login-input" type="password" name="newUserPassword" id="regPassword" required>
       </div>
       <div>
         <label for="regConfirmPassword">Confirm Password</label>
