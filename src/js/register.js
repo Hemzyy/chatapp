@@ -14,6 +14,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
       if (password === confirmPassword) {
         // Successful registration
         alert('Registration Successful');
+        event.target.submit();
         // Reset the form
         document.getElementById('registrationForm').reset();
       } else {
@@ -24,4 +25,5 @@ document.getElementById('registrationForm').addEventListener('submit', function(
       // Missing fields
       alert('Please fill in all fields');
     }
+
 });
