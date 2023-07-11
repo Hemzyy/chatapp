@@ -1,3 +1,5 @@
+//script to handle the chat
+
 // Function to handle sending a message
 function sendMessage() {
     const messageInput = document.getElementById('message-input');

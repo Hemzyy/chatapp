@@ -1,5 +1,5 @@
 
-// Register form
+// script to handle registration
 
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault();
