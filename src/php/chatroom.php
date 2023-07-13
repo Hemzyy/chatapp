@@ -1,3 +1,11 @@
+<?php 
+ini_set('display_errors', 1);
+error_reporting(E_ALL|E_STRICT);
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +20,7 @@
   <header>
     <h1>Real-Time Chat Application</h1>
   </header>
+  <p>Welcome, <?php echo $_SESSION['username']; ?></p>
   <div class="container">
     <div class="chat-window">
       <div class="chat-area">
