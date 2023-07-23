@@ -35,6 +35,53 @@ session_start();
       </div>
     </div>
 
+    <!-- <script src="../js/script.js"></script> -->
+
+        <!-- Add this script tag at the end of your HTML body section -->
+    <script>
+    // Function to fetch new messages from the server
+    function fetchNewMessages() {
+        // Make an AJAX request to the server
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "get_new_messages.php", true); // Replace "get_new_messages.php" with your actual PHP file to fetch new messages
+        xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+            // If the request is successful, handle the response
+            console.log(xhr.responseText);
+            var response = JSON.parse(xhr.responseText);
+            // Update the chat interface with the new messages
+            updateChatInterface(response.messages);
+            }else{
+                console.log("Error: " + xhr.status + " - " + xhr.statusText);
+            }
+        }
+        };
+        xhr.send();
+    }
+
+    // Call the fetchNewMessages function every 5 seconds (adjust the interval as needed)
+    setInterval(fetchNewMessages, 3000); // 5000 milliseconds = 5 seconds
+
+    function updateChatInterface(messages) {
+        // Get the chat container element
+        var chatContainer = document.querySelector('.chat-messages'); // Replace "chat-container" with your actual chat container element's class
+
+        // Clear the chat container before appending new messages
+        chatContainer.innerHTML = '';
+
+        // Loop through the new messages and append them to the chat container
+        for (var i = 0; i < messages.length; i++) {
+            var message = messages[i];
+            var messageElement = document.createElement("div");
+            messageElement.className = "message";
+            messageElement.textContent = message.MESSAGE; // Assuming the message content is stored in the 'MESSAGE' field of the message object
+            chatContainer.appendChild(messageElement);
+        }
+  }
+    </script>
+
+
 
     <script>
     // Function to send a message using AJAX
@@ -100,6 +147,7 @@ session_start();
         }
     });
 </script>
+
 
 
 </body>
