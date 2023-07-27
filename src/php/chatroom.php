@@ -73,7 +73,8 @@ session_start();
                 var message = messages[i];
                 var messageElement = document.createElement("div");
                 messageElement.className = "message";
-                messageElement.textContent = message.MESSAGE;
+                //messageElement.textContent = message.MESSAGE;
+                messageElement.textContent = message.USER + ": " + message.MESSAGE;
                 chatContainer.appendChild(messageElement);
             }
         }
